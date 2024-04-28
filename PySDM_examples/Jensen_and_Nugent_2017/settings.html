@@ -26,7 +26,9 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">from pystrict import strict
+<pre><code class="python">from typing import Optional
+
+from pystrict import strict
 from PySDM import Formulae
 from PySDM.physics import si
 from PySDM.initialisation.spectra import Lognormal, Sum
@@ -39,19 +41,19 @@ INITIAL_ALTITUDE = 600 * si.metres
 
 @strict
 class Settings:
-    def __init__(self, *, aerosol: str, cloud_type: str):
+    def __init__(self, *, aerosol: str, cloud_type: str, dt: Optional[float] = None):
         self.p0 = INITIAL_PRESSURE
         self.RH0 = INITIAL_RELATIVE_HUMIDITY
         self.T0 = INITIAL_TEMPERATURE
         self.z0 = INITIAL_ALTITUDE
         self.t_end_of_ascent = 1500 * si.s if cloud_type == &#34;Sc&#34; else None
-        self.dt = 1 * si.s  # TODO #1266: not found in the paper yet
+        self.dt = dt or 1 * si.s  # TODO #1266: not found in the paper yet
 
         self.kappa = 1.28  # Table 1 from Petters &amp; Kreidenweis 2007
 
         self.formulae = Formulae(
             saturation_vapour_pressure=&#34;FlatauWalkoCotton&#34;,  # TODO #1266: Bolton
-            diffusion_kinetics=&#34;JensenAndNugent2017&#34;,
+            diffusion_kinetics=&#34;GrabowskiEtAl2011&#34;,
             diffusion_thermics=&#34;GrabowskiEtAl2011&#34;,
             constants={
                 # values from appendix B
@@ -102,7 +104,7 @@ class Settings:
 <dl>
 <dt id="PySDM_examples.Jensen_and_Nugent_2017.settings.Settings"><code class="flex name class">
 <span>class <span class="ident">Settings</span></span>
-<span>(</span><span>*, aerosol: str, cloud_type: str)</span>
+<span>(</span><span>*, aerosol: str, cloud_type: str, dt: Optional[float] = None)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -112,19 +114,19 @@ class Settings:
 </summary>
 <pre><code class="python">@strict
 class Settings:
-    def __init__(self, *, aerosol: str, cloud_type: str):
+    def __init__(self, *, aerosol: str, cloud_type: str, dt: Optional[float] = None):
         self.p0 = INITIAL_PRESSURE
         self.RH0 = INITIAL_RELATIVE_HUMIDITY
         self.T0 = INITIAL_TEMPERATURE
         self.z0 = INITIAL_ALTITUDE
         self.t_end_of_ascent = 1500 * si.s if cloud_type == &#34;Sc&#34; else None
-        self.dt = 1 * si.s  # TODO #1266: not found in the paper yet
+        self.dt = dt or 1 * si.s  # TODO #1266: not found in the paper yet
 
         self.kappa = 1.28  # Table 1 from Petters &amp; Kreidenweis 2007
 
         self.formulae = Formulae(
             saturation_vapour_pressure=&#34;FlatauWalkoCotton&#34;,  # TODO #1266: Bolton
-            diffusion_kinetics=&#34;JensenAndNugent2017&#34;,
+            diffusion_kinetics=&#34;GrabowskiEtAl2011&#34;,
             diffusion_thermics=&#34;GrabowskiEtAl2011&#34;,
             constants={
                 # values from appendix B

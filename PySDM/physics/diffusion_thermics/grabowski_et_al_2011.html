@@ -38,17 +38,19 @@ class GrabowskiEtAl2011:
 
     @staticmethod
     def D(const, T, p):  # pylint: disable=unused-argument
-        return const.diffussion_thermics_D_G11_A * (
-            const.diffussion_thermics_D_G11_B * T + const.diffussion_thermics_D_G11_C
+        &#34;&#34;&#34;eq (10)&#34;&#34;&#34;
+        return const.diffusion_thermics_D_G11_A * (
+            const.diffusion_thermics_D_G11_B * T + const.diffusion_thermics_D_G11_C
         )
 
     @staticmethod
     def K(const, T, p):  # pylint: disable=unused-argument
+        &#34;&#34;&#34;eq (12)&#34;&#34;&#34;
         return (
-            const.diffussion_thermics_K_G11_A * T**3
-            + const.diffussion_thermics_K_G11_B * T**2
-            + const.diffussion_thermics_K_G11_C * T
-            + const.diffussion_thermics_K_G11_D
+            const.diffusion_thermics_K_G11_A * T**3
+            + const.diffusion_thermics_K_G11_B * T**2
+            + const.diffusion_thermics_K_G11_C * T
+            + const.diffusion_thermics_K_G11_D
         )</code></pre>
 </details>
 </section>
@@ -77,17 +79,19 @@ class GrabowskiEtAl2011:
 
     @staticmethod
     def D(const, T, p):  # pylint: disable=unused-argument
-        return const.diffussion_thermics_D_G11_A * (
-            const.diffussion_thermics_D_G11_B * T + const.diffussion_thermics_D_G11_C
+        &#34;&#34;&#34;eq (10)&#34;&#34;&#34;
+        return const.diffusion_thermics_D_G11_A * (
+            const.diffusion_thermics_D_G11_B * T + const.diffusion_thermics_D_G11_C
         )
 
     @staticmethod
     def K(const, T, p):  # pylint: disable=unused-argument
+        &#34;&#34;&#34;eq (12)&#34;&#34;&#34;
         return (
-            const.diffussion_thermics_K_G11_A * T**3
-            + const.diffussion_thermics_K_G11_B * T**2
-            + const.diffussion_thermics_K_G11_C * T
-            + const.diffussion_thermics_K_G11_D
+            const.diffusion_thermics_K_G11_A * T**3
+            + const.diffusion_thermics_K_G11_B * T**2
+            + const.diffusion_thermics_K_G11_C * T
+            + const.diffusion_thermics_K_G11_D
         )</code></pre>
 </details>
 <h3>Static methods</h3>
@@ -96,15 +100,16 @@ class GrabowskiEtAl2011:
 <span>def <span class="ident">D</span></span>(<span>const, T, p)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>eq (10)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def D(const, T, p):  # pylint: disable=unused-argument
-    return const.diffussion_thermics_D_G11_A * (
-        const.diffussion_thermics_D_G11_B * T + const.diffussion_thermics_D_G11_C
+    &#34;&#34;&#34;eq (10)&#34;&#34;&#34;
+    return const.diffusion_thermics_D_G11_A * (
+        const.diffusion_thermics_D_G11_B * T + const.diffusion_thermics_D_G11_C
     )</code></pre>
 </details>
 </dd>
@@ -112,18 +117,19 @@ def D(const, T, p):  # pylint: disable=unused-argument
 <span>def <span class="ident">K</span></span>(<span>const, T, p)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>eq (12)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
 def K(const, T, p):  # pylint: disable=unused-argument
+    &#34;&#34;&#34;eq (12)&#34;&#34;&#34;
     return (
-        const.diffussion_thermics_K_G11_A * T**3
-        + const.diffussion_thermics_K_G11_B * T**2
-        + const.diffussion_thermics_K_G11_C * T
-        + const.diffussion_thermics_K_G11_D
+        const.diffusion_thermics_K_G11_A * T**3
+        + const.diffusion_thermics_K_G11_B * T**2
+        + const.diffusion_thermics_K_G11_C * T
+        + const.diffusion_thermics_K_G11_D
     )</code></pre>
 </details>
 </dd>
